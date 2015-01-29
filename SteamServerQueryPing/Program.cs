@@ -28,14 +28,14 @@ namespace SteamServerQueryPing
                 if (args.Length >= 3) Int32.TryParse(args[2], out loopMaxCount);
                 ipEndpoint = new IPEndPoint(ip, ssqport);
             }
-            catch (Exception ex)
+            catch //(Exception ex)
             {
                 Console.Out.WriteLine("Invalid parameters, expect the following:");
                 Console.Out.WriteLine("[Server IP Address] [Steam Server Query Port] [Times To Loop]");
                 Console.Out.WriteLine("[Server IP Address] must be a valid string representation for the IPv4 address of the server.");
-                Console.Out.WriteLine("[Steam Server Query Port] must be a valid string representation for the Steam Server Query Port of the server (usually game port + 1.");
+                Console.Out.WriteLine("[Steam Server Query Port] must be a valid string representation for the Steam Server Query Port of the server (usually game port + 1).");
                 Console.Out.WriteLine("[Times To Loop] is optional, will be used as the number of times to ping the server. Will ping indefinately if omitted or a negitive integer is given.");
-                Console.Out.WriteLine("");
+                /*Console.Out.WriteLine("");
                 Console.Out.WriteLine(ex.Message);
                 Console.Out.WriteLine(ex.StackTrace.ToString());
                 /*
